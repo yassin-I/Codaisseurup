@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+  before_action :set_event, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
 
   def index
@@ -8,7 +8,7 @@ class EventsController < ApplicationController
 
   def show; end
 
-  def new_event
+  def new
     @event = current_user.events.build
   end
 
