@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "Current user viewing the list of rooms" do
+describe "Current user viewing the list of events" do
 
-  it "shows all his rooms"
+  it "shows all his events"
 
 end

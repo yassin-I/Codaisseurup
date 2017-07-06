@@ -35,6 +35,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Use jQuery for easier javascript
 gem 'jquery-rails', '~> 4.3.1'
 gem 'devise', '~> 4.2'
+gem 'cloudinary', '1.2.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
