@@ -8,12 +8,22 @@
 Category.destroy_all
 User.destroy_all
 
-house_party = Category.create(name: "House_party")
-tempting_terrace = Category.create(name: "Tempting Terrace")
 
-Event.create(event_type: "House_party", place: "Amsterdam", accommodate: 2)
+yassin = User.create(email:"yassin@live.com", password:"good")
+house_party = Category.create(name:"House_party")
+tempting_terrace = Category.create(name:"Tempting Terrace")
 
-yassin = User.create ("email: yassin@live.com" password = abc123)
-event = Event.create (name: "cool event", description: "walking in holland")
-DateTime.new(2018,02,03),
-ends_at: DateTime.new(2019,05,07),
+
+event = Event.create!(
+name:"Birthday Party",
+description:"It’s a Birthday Party",
+location: "At Home",
+price: 10.00,
+capacity: 20,
+includes_food: true,
+includes_drinks: true,
+starts_at:Time.now,
+ends_at:(Time.now + 1.day),
+active:true,
+user: yassin,
+)
