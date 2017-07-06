@@ -1,12 +1,14 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update]
+
   before_action :authenticate_user!, except: [:show]
 
   def index
     @events = current_user.events
   end
 
-  def show; end
+  def show
+    @category = @event.categories
+  end
 
   def new
     @event = current_user.events.build
@@ -23,6 +25,7 @@ class EventsController < ApplicationController
   end
 
   def edit_event; end
+
 
   def update
     if @event.update(event_params)

@@ -1,31 +1,25 @@
 <%= form_for @event do |f| %>
   <div class="form-group">
     <label>Event Type </label>
-    <%= f.select :description, [["Canals", "Canals"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]], id: "home_type", prompt: "Select home type", class: "form-control" %>
+    <%= f.select :description, [["Canals", "Canals"], ["Walking", "Walking"], ["Club & Beach", "Club & Beacht"]], id: "event_type", prompt: "Select event type", class: "form-control" %>
   </div>
 
   <div class="form-group">
     <label>Description</label>
-    <%= f.select :location, [["Entire","Entire"], ["Private", "Private"], ["Shared", "Shared"]], prompt: "Select room type", class: "form-control" %>
+    <%= f.select :location, [["Group","Group"], ["Private", "Private"], ["Shared", "Shared"]], prompt: "Select event type", class: "form-control" %>
   </div>
 
-
-
-
-
-  <label>Amenities</label>
-
+<label>Amenities</label>
   <div class="form-group">
     <%= f.check_box :location %> Location
   </div>
 
-  </div>
   <div class="form-group">
     <%= f.check_box :capacity %> capacity
   </div>
 
   <div class="form-group">
-    <%= f.check_box :includes_food %> Heating
+    <%= f.check_box :includes_food %> Food
   </div>
   <div class="form-group">
     <%= f.check_box :includes_drinks %> Drinks
@@ -38,6 +32,14 @@
       <%= f.number_field :price, placeholder: "eg. 100", class: "form-control" %>
     </div>
   </div>
+
+  <label>Categories</label>
+
+<%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+  <div class="form-group">
+    <%= b.check_box(class: "check_box") %> <%= b.object.name %>
+  </div>
+<% end %>
 
   <label>Publish this place?</label>
 

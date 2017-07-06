@@ -9,8 +9,8 @@
     <!-- Main Info -->
     <h4>Main Info</h4>
     <p>Home Type: <%= @event %></p>
-    <p><%= @event %> <%= @event = 1 ? "Walking in Amsterdam" : "Walking in Amsterdam" %></p>
-    <p><%= @event %> <%= @event = 1 ? "Stages" : "Stages" %></p>
+    <p><%= @event %> <%= @event = 1 ? "Walking in Holland" : "Walking in Holland" %></p>
+    <p><%= @event %> <%= @event = 1 ? "Cool" : "Cool" %></p>
 
 
     <!-- About -->
@@ -32,3 +32,8 @@
 </div>
 
 <%= link_to "Back", events_path, class: "btn btn-default" %>
+<!-- Themes -->
+<h4>Categories</h4>
+<% @categories.each do |category| %>
+  <span class="label label-success"><%= category.name %></span>
+<% end %>

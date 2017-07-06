@@ -5,8 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Category.destroy_all
 User.destroy_all
-yassin = User.create ("email: yassin@live.com", password: 123456)
+
+house_party = Category.create(name: "House_party")
+tempting_terrace = Category.create(name: "Tempting Terrace")
+
+yassin = User.create ("email: yassin@live.com" password:123456)
 event = Event.create (name: "cool event", description: "walking in holland")
 DateTime.new(2018,02,03),
 ends_at: DateTime.new(2019,05,07),

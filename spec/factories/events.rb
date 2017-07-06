@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :event do
-    event_type         "Walking in Amsterdam"
-    description        "Stages"
+    event_type         "Walking in Holland"
+    description        "Cool"
     location            1
     capacity            10
     starts_at           Time.now
