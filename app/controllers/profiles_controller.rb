@@ -18,7 +18,9 @@ class ProfilesController < ApplicationController
 
   def edit
   end
-
+  def show
+    @category = @event.categories
+  end
   def update
     if @profile.update(profile_params)
       redirect_to edit_profile_path(@profile), notice: "Profile successfully updated"

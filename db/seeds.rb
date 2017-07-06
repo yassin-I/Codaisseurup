@@ -11,7 +11,9 @@ User.destroy_all
 house_party = Category.create(name: "House_party")
 tempting_terrace = Category.create(name: "Tempting Terrace")
 
-yassin = User.create ("email: yassin@live.com" password:123456)
+Event.create(event_type: "House_party", place: "Amsterdam", accommodate: 2)
+
+yassin = User.create ("email: yassin@live.com" password = abc123)
 event = Event.create (name: "cool event", description: "walking in holland")
 DateTime.new(2018,02,03),
 ends_at: DateTime.new(2019,05,07),
