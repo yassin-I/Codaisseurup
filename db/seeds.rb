@@ -28,5 +28,5 @@ active:true,
 user: yassin,
 )
 
-photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355523/event_vpswrb.jpg", room: room_1)
-photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355534/event_soma_mnkhqt.jpg", room: room_1)
+photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355523/event_vpswrb.jpg", event: event_name)
+photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355534/event_soma_mnkhqt.jpg", event: event_name)
