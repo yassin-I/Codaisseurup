@@ -9,5 +9,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   resources :events, except: [:destroy]
+  resources :events do
+  resources :bookings, only: [:create]
+  end
+  namespace :api do
+     resources :events
+  end
+
 
 end

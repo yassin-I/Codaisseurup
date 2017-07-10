@@ -9,6 +9,7 @@ Category.destroy_all
 User.destroy_all
 
 
+
 yassin = User.create(email:"yassin@live.com", password:"good")
 house_party = Category.create(name:"House_party")
 tempting_terrace = Category.create(name:"Tempting Terrace")
@@ -28,5 +29,8 @@ active:true,
 user: yassin,
 )
 
-photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355523/event_vpswrb.jpg", event: event_name)
-photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355534/event_soma_mnkhqt.jpg", event: event_name)
+photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355523/event_vpswrb.jpg", event: event)
+photo2 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dsveomrqj/image/upload/v1499355534/event_soma_mnkhqt.jpg", event: event)
+
+Booking.create(event: event1, user: wouter, price: 50, total: 100, starts_at: 10.days.from_now, ends_at: 12.days.from_now)
+Booking.create(event: event1, user: matt, price: 50, total: 200, starts_at: 20.days.from_now, ends_at: 24.days.from_now)
