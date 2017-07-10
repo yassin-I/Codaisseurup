@@ -1,4 +1,5 @@
 class Api::EventsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
     render status: 200, json: {
       events: Event.all
@@ -12,25 +13,25 @@ class Api::EventsController < ApplicationController
     }.to_json
   end
   def create
-    event = Event.new(event_params)
+   event = Event.new(event_params)
 
-    if event.save
-      render status: 201, json: {
-      message: "Event succesfully created,"
-      event: event
-    }.to_json
-  else
-    render status: 422, json: {
-      errors: event.errors
-    }.to_json
-
-    end
-  end
+   if event.save
+     render status: 201, json: {
+       message: "Event successfully created",
+       event: event
+     }.to_json
+   else
+     render status: 422, json: {
+       errors: event.errors
+     }.to_json
+   end
+ end
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location, :price,
+    params.require(:event)
+    .permit(:name, :description, :location, :price,
     :capacity, :includes_food, :includes_drinks, :starts_at, :ends_at, :active, theme_ids:[])
 
   end
